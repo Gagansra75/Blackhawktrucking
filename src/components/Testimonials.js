@@ -20,6 +20,19 @@ function Testimonials() {
       text: 'Saved me so much time finding quality gear. Prices are competitive!',
       author: 'Mike Davis'
     }
+    ,
+    {
+      id: 4,
+      stars: '⭐⭐⭐⭐⭐',
+      text: 'Excellent build quality and very helpful support. Will buy again.',
+      author: 'Emily Clark'
+    },
+    {
+      id: 5,
+      stars: '⭐⭐⭐⭐⭐',
+      text: 'Fast delivery and the accessories fit perfectly. Five stars!',
+      author: 'Carlos Martinez'
+    }
   ];
 
   return (

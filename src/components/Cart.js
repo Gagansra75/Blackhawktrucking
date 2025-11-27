@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Cart({ items, onClose, onRemoveItem }) {
+  const navigate = useNavigate();
   const calculateTotal = () => {
     return items.reduce((total, item) => total + item.price, 0);
   };
@@ -10,8 +12,9 @@ function Cart({ items, onClose, onRemoveItem }) {
       alert('Your cart is empty!');
       return;
     }
-    alert(`Proceeding to checkout with ${items.length} items. Total: $${calculateTotal().toFixed(2)}`);
+    // Navigate to checkout page and close the cart popup
     onClose();
+    navigate('/checkout');
   };
 
   return (

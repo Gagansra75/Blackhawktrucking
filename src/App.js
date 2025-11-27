@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
+import CheckoutPage from './pages/CheckoutPage';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -61,6 +62,7 @@ function App() {
           <Route path="/products" element={<ProductsPage onAddToCart={addToCart} />} />
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/checkout" element={<CheckoutPage items={cart} />} />
         </Routes>
 
         {isCartOpen && (
