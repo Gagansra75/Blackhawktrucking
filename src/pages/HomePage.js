@@ -5,11 +5,13 @@ import ProductGrid from '../components/ProductGrid';
 import Testimonials from '../components/Testimonials';
 import Newsletter from '../components/Newsletter';
 import Contact from '../components/Contact';
+import AnimatedStats from '../components/AnimatedStats';
 
 function HomePage({ onAddToCart }) {
   return (
     <div className="home-page">
       <Hero />
+      <AnimatedStats />
       <ProductGrid onAddToCart={onAddToCart} />
       
       <section className="featured-products-cta">
