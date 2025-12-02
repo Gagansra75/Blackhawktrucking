@@ -14,7 +14,12 @@ function Header({ cartCount, onCartClick, isMenuOpen, onMenuToggle }) {
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/products">Products</Link></li>
-          <li><Link to="/testimonials">Testimonials</Link></li>
+          <li><Link to="/tracking">Track</Link></li>
+          <li><Link to="/quote">Quote</Link></li>
+          <li><Link to="/team">Team</Link></li>
+          <li><Link to="/gallery">Gallery</Link></li>
+          <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/testimonials">Reviews</Link></li>
           <li><Link to="/contact">Contact</Link></li>
           <li>
             <button className="cart-btn" onClick={onCartClick}>

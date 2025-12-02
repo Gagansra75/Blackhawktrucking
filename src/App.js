@@ -4,16 +4,24 @@ import './App.css';
 import Header from './components/Header';
 import Cart from './components/Cart';
 import Footer from './components/Footer';
+import LiveChat from './components/LiveChat';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
 import CheckoutPage from './pages/CheckoutPage';
+import GalleryPage from './pages/GalleryPage';
+import BlogPage from './pages/BlogPage';
+import BlogPostPage from './pages/BlogPostPage';
+import QuotePage from './pages/QuotePage';
+import TrackingPage from './pages/TrackingPage';
+import TeamPage from './pages/TeamPage';
 
 function App() {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const addToCart = (product) => {
     setCart([...cart, { ...product, cartId: Date.now() }]);
@@ -30,7 +38,7 @@ function App() {
       position: fixed;
       top: 80px;
       right: 20px;
-      background-color: #4CAF50;
+      background-color: #00897b;
       color: white;
       padding: 15px 20px;
       border-radius: 5px;
@@ -63,6 +71,12 @@ function App() {
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/checkout" element={<CheckoutPage items={cart} />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<BlogPostPage />} />
+          <Route path="/quote" element={<QuotePage />} />
+          <Route path="/tracking" element={<TrackingPage />} />
+          <Route path="/team" element={<TeamPage />} />
         </Routes>
 
         {isCartOpen && (
@@ -72,6 +86,18 @@ function App() {
             onRemoveItem={removeFromCart}
           />
         )}
+
+        {isChatOpen && (
+          <LiveChat onClose={() => setIsChatOpen(false)} />
+        )}
+
+        <button 
+          className="live-chat-button"
+          onClick={() => setIsChatOpen(!isChatOpen)}
+          title="Live Chat Support"
+        >
+          💬
+        </button>
         
         <Footer />
       </div>

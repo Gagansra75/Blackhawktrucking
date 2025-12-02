@@ -29,3 +29,5 @@ yarn-error.log*
 *.swo
 *~
 .eslintcache
+*.backup
+src/App.css.backup
